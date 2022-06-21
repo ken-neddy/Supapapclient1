@@ -184,7 +184,8 @@
             android:id="@+id/gotAccounttxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Got account? log in"
+            android:text="@string/got_account_log_in"
+            android:layout_marginTop="15dp"
             android:textAlignment="center"
             android:textColor="@color/purple_700" />
 
