@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.commerce.supapap.Adaptor.CategoryAdaptor;
 import com.commerce.supapap.Domain.CategoryDomain;
 
 import java.util.ArrayList;
@@ -34,5 +35,8 @@ public class Dashboard extends AppCompatActivity {
         category.add(new CategoryDomain("chicken","logo3"));
         category.add(new CategoryDomain("beef","logo3"));
         category.add(new CategoryDomain("rolls","logo3"));
+
+        adapter = new CategoryAdaptor(category);
+        recyclerViewCategoryList.setAdapter(adapter);
     }
 }
