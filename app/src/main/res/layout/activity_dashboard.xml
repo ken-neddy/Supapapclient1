@@ -90,7 +90,7 @@
                     <ImageView
                         android:id="@+id/imageView4"
                         android:layout_width="224dp"
-                        android:layout_height="143dp"
+                        android:layout_height="150dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -186,9 +186,11 @@
                     app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/BestdealsRV"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView17" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -227,7 +229,7 @@
                     <ImageView
                         android:id="@+id/imageViewhome"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0dp"
                         android:layout_weight="1"
                         android:scaleType="center"
                         app:srcCompat="@drawable/house_fill0_wght400_grad0_opsz48" />
@@ -247,6 +249,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
+                    android:paddingEnd="30dp"
                     android:orientation="vertical">
 
                     <ImageView
@@ -274,6 +277,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.2"
+                    android:paddingStart="13dp"
                     android:orientation="vertical">
 
                     <ImageView

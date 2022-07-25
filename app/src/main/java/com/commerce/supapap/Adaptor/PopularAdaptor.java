@@ -12,17 +12,18 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.commerce.supapap.Domain.CategoryDomain;
+import com.commerce.supapap.Domain.BestDealsDomain;
 import com.commerce.supapap.R;
 
 import java.util.ArrayList;
 
-public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.Viewholder>{
-    ArrayList<CategoryDomain>categoryDomains;
+public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewholder>{
+    ArrayList<BestDealsDomain> bestDealsDomains;
 
-    public CategoryAdaptor(ArrayList<CategoryDomain> categoryDomains) {
-        this.categoryDomains = categoryDomains;
+    public PopularAdaptor(ArrayList<BestDealsDomain> bestDealsDomains) {
+        this.bestDealsDomains = bestDealsDomains;
     }
+
 
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -33,7 +34,7 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.Viewho
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.categoryName.setText(categoryDomains.get(position).getTitle());
+        holder.categoryName.setText(bestDealsDomains.get(position).getTitle());
         String picUrl = "";
         switch (position){
             case 0:{
@@ -87,7 +88,7 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.Viewho
 
     @Override
     public int getItemCount() {
-        return categoryDomains.size();
+        return bestDealsDomains.size();
     }
 
     public class Viewholder extends RecyclerView.ViewHolder{
