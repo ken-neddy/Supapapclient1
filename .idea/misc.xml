@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable-xxxhdpi/minusbtn.xml" value="0.2065" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/add_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cart_background.xml" value="0.2065" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background.xml" value="0.19" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background2.xml" value="0.19" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background3.xml" value="0.19" />
@@ -15,6 +18,7 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/orange_light_background.xml" value="0.151" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/person_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/red_button_background.xml" value="0.1155" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/remove_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/search_background.xml" value="0.131" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/settings_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/social_border_button.xml" value="0.1155" />
@@ -24,6 +28,7 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_intro.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_log_in.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_show_details.xml" value="0.2469298245614035" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_sign_up.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/viewholder_bestdeals.xml" value="0.2469298245614035" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/viewholder_category.xml" value="0.5" />

@@ -23,6 +23,7 @@ public class Dashboard extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         recyclerViewCategory();
+        recyclerViewBestDeals();
     }
 
     private void recyclerViewCategory() {
@@ -60,7 +61,7 @@ public class Dashboard extends AppCompatActivity {
         bestdeals.add(new BestDealsDomain("Pizza","logo2","Slices of Gold",999.00,2));
         bestdeals.add(new BestDealsDomain("Yorgurt","logo2","Thickkkkk",89.00,3));
 
-        adapter = new PopularAdaptor(bestdeals);
-        recyclerViewCategoryList.setAdapter(adapterBestDeals);
+        adapterBestDeals = new PopularAdaptor(bestdeals);
+        recyclerViewBestDeals.setAdapter(adapterBestDeals);
     }
 }
