@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ShowDetailsActivity">
 
+    <TextView
+        android:id="@+id/addtocartbtn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/orange_button"
+        android:gravity="center"
+        android:text="Add to cart"
+        android:textStyle="bold"
+        android:elevation="3dp"
+        android:textColor="#ffffff"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +54,7 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/product"
                 android:layout_width="match_parent"
                 android:layout_height="290dp"
                 app:srcCompat="@drawable/liquor_gd0ea7ba53_1280_removebg_preview" />
@@ -46,19 +62,19 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
                 android:gravity="center"
+                android:orientation="horizontal"
                 android:paddingStart="50dp"
                 android:paddingEnd="50dp">
 
                 <TextView
-                    android:id="@+id/button2"
+                    android:id="@+id/minusbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/remove_fill0_wght400_grad0_opsz48" />
 
                 <TextView
-                    android:id="@+id/textView15"
+                    android:id="@+id/NumberofOrdertxt"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
@@ -70,6 +86,17 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/add_fill0_wght400_grad0_opsz48" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/descriptiontxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Product description"
+                android:textColor="#686767"
+                android:textSize="18sp"
+
+                />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
