@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Supapap"
         tools:targetApi="31">
         <activity
+            android:name=".Retailerlogin"
+            android:exported="false" />
+        <activity
+            android:name=".Addproduct"
+            android:exported="false" />
+        <activity
             android:name=".Drawer"
             android:exported="false"
             android:label="@string/title_activity_drawer"

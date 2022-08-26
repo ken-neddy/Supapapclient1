@@ -27,4 +27,15 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string-array name="nameCategorySpinner">
+        <item>Bakery</item>
+        <item>Beverages</item>
+        <item>Cutlery</item>
+        <item>Electronics</item>
+        <item>Groceries</item>
+        <item>Cereals</item>
+        <item>Pharmacy</item>
+        <item>Spices</item>
+    </string-array>
 </resources>

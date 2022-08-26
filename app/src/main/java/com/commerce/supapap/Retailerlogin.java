@@ -32,7 +32,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
 
-public class Log_in extends AppCompatActivity {
+public class Retailerlogin extends AppCompatActivity {
     private TextView editTextTextEmail;
     private TextView editTextTextPassword;
     private Button googlebtn;
@@ -46,11 +46,10 @@ public class Log_in extends AppCompatActivity {
     private static final int RC_SIGN_IN = 007;
     private ProgressBar progressBar;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+        setContentView(R.layout.activity_retailerlogin);
         FacebookSdk.sdkInitialize(this.getApplicationContext());
 
         googlebtn = (Button) findViewById(R.id.googlebtn);
@@ -69,23 +68,16 @@ public class Log_in extends AppCompatActivity {
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Log_in.this, Sign_up.class);
+                Intent intent = new Intent(Retailerlogin.this, Sign_up.class);
                 startActivity(intent);
             }
         });
 
-        retailerLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Log_in.this, Retailerlogin.class);
-                startActivity(intent);
-            }
-        });
 
         forgotpasswordtextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Log_in.this,Forgotpassword.class));
+                startActivity(new Intent(Retailerlogin.this,Forgotpassword.class));
             }
         });
 
@@ -99,19 +91,19 @@ public class Log_in extends AppCompatActivity {
                 new FacebookCallback<LoginResult>() {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
-                        Toast.makeText(Log_in.this, "success✔", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Log_in.this, Dashboard.class);
+                        Toast.makeText(Retailerlogin.this, "success✔", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Retailerlogin.this, Addproduct.class);
                         startActivity(intent);
                     }
 
                     @Override
                     public void onCancel() {
-                        Toast.makeText(Log_in.this, "failed", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Retailerlogin.this, "failed", Toast.LENGTH_LONG).show();
                     }
 
                     @Override
                     public void onError(@NonNull FacebookException e) {
-                        Toast.makeText(Log_in.this, "error", Toast.LENGTH_LONG).show();
+                        Toast.makeText(Retailerlogin.this, "error", Toast.LENGTH_LONG).show();
                     }
                 });
 
@@ -146,7 +138,7 @@ public class Log_in extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                LoginManager.getInstance().logInWithReadPermissions(Log_in.this, Arrays.asList("public_profile"));
+                LoginManager.getInstance().logInWithReadPermissions(Retailerlogin.this, Arrays.asList("public_profile"));
             }
         });
     }
@@ -177,7 +169,7 @@ public class Log_in extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Log_in.this, Dashboard.class);
+            Intent intent = new Intent(Retailerlogin.this, Addproduct.class);
             startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -202,17 +194,15 @@ public class Log_in extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
-                        Toast.makeText(Log_in.this, "success✔", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Log_in.this, Dashboard.class));
+                        Toast.makeText(Retailerlogin.this, "success✔", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Retailerlogin.this, Addproduct.class));
                         progressBar.setVisibility(View.VISIBLE);
                     }else {
-                        Toast.makeText(Log_in.this, "Error❌:"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(Retailerlogin.this, "Error❌:"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();
                         progressBar.setVisibility(View.GONE);
                     }
                 }
             });
         }
     }
-
-
-}
+    }

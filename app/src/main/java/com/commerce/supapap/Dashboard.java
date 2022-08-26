@@ -1,10 +1,13 @@
 package com.commerce.supapap;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.commerce.supapap.Adaptor.CategoryAdaptor;
 import com.commerce.supapap.Adaptor.PopularAdaptor;
@@ -16,6 +19,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapterBestDeals;
     private RecyclerView recyclerViewCategoryList, recyclerViewBestDeals;
+    private Toolbar mtoolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,19 @@ public class Dashboard extends AppCompatActivity {
 
         recyclerViewCategory();
         recyclerViewBestDeals();
+
+      //  mtoolbar = findViewById(R.id.toolbar1);
+       // setSupportActionBar(mtoolbar);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
+
+
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
+
     }
 
     private void recyclerViewCategory() {

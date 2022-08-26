@@ -4,18 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Log_in">
-
+    tools:context=".Retailerlogin">
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="330dp"
         android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background" />
+        app:srcCompat="@drawable/hd_wallpaper_4096891_1920_removebg_preview" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,7 +36,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/editTextTextEmail"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginTop="8dp"
@@ -75,19 +73,14 @@
             android:textColorHint="#8e8e8e"
             android:textSize="14dp" />
 
-        <EditText
-            android:id="@+id/editTextConfirm"
+        <TextView
+            android:id="@+id/forgotpasswordtextView"
             android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/editext_white"
-            android:ems="10"
-            android:hint="Confirm password"
-            android:inputType="textPassword"
-            android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
-            android:textSize="14dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Forgot password?"
+            android:textAlignment="viewStart"
+            android:textColor="#4d4d4d" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -110,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:text="Or create account with"
+                android:text="Or log in with"
                 android:textColor="#4d4d4d" />
 
             <View
@@ -169,34 +162,38 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/createAccountbtn"
+            android:id="@+id/log_inbtn"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
             app:cornerRadius = "10dp"
-            android:text="Create"
+            android:text="LOG IN"
             android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/gotAccounttxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/got_account_log_in"
-            android:layout_marginTop="15dp"
-            android:textAlignment="center"
-            android:textColor="@color/purple_700" />
-
-        <TextView
-            android:id="@+id/adminlogin"
+            android:id="@+id/createaccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="15dp"
-            android:text="Are you a retailer? CLICK HERE"
+            android:text="No account? Contact office"
             android:textAlignment="center"
             android:textColor="@color/purple_700"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:elevation="8dp"
             />
 
     </LinearLayout>
@@ -205,14 +202,15 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/half_white_background"
+        android:background="@drawable/free_delivery_background"
         android:padding="16dp"
-        android:text="Create a Supapap account"
-        android:textColor="#ffffff"
-        android:textSize="27sp"
+        android:text="Log in to your retailer account"
+        android:textColor="#000000"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,44 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context=".Dashboard">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbarlayout"
+    <!--<androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/navigationView"
+        app:menu="@menu/activity_main_drawer"
+        android:layout_height="match_parent"/>
+    </androidx.drawerlayout.widget.DrawerLayout>-->
+
+    <!--<com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbartop"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         app:layout_constraintTop_toTopOf="parent">
 
+
+
         <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </com.google.android.material.appbar.AppBarLayout>
+            android:layout_height="55dp"/>
+    </com.google.android.material.appbar.AppBarLayout>-->
 
     <ScrollView
         android:id="@+id/app_scroll_view"
-        android:layout_width="393dp"
-        android:layout_height="719dp"
-        android:layout_marginBottom="50dp"
+        android:layout_width="391dp"
+        android:layout_height="match_parent"
+        android:paddingTop="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_marginTop="50dp"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <EditText
-                    app:layout_constraintTop_toTopOf="parent"
                     android:id="@+id/textView6"
                     android:layout_width="0dp"
-                    android:layout_height="40dp"
+                    android:layout_height="48dp"
                     android:layout_marginStart="32dp"
                     android:layout_marginEnd="32dp"
                     android:background="@drawable/search_background"
@@ -55,7 +69,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="16dp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout2"
@@ -166,6 +180,7 @@
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/BestdealsRV"
