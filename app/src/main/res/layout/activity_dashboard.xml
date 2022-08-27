@@ -7,8 +7,10 @@
     android:fitsSystemWindows="true"
     tools:context=".Dashboard">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
+        android:id="@+id/appbar2"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         android:padding="16dp">
@@ -16,14 +18,36 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/backbtn"
+            android:layout_centerVertical="true"
             android:src="@drawable/arrow_back_48px"/>
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_centerVertical="true"
+    android:paddingStart="7dp"
+    android:paddingEnd="7dp"
+    android:layout_centerHorizontal="true"
+    android:background="@drawable/addproduct3"
+    android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="locationxy"
+            android:textColor="#274F70"
+            android:textSize="15dp" />
+</LinearLayout>
+
         <ImageView
+            android:id="@+id/menubtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/menu_48px"
-            />
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu_48px" />
 
     </RelativeLayout>
 
@@ -60,6 +84,7 @@
         android:paddingTop="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout

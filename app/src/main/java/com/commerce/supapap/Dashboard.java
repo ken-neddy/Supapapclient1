@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapterBestDeals;
     private RecyclerView recyclerViewCategoryList, recyclerViewBestDeals;
-    private Toolbar mtoolbar;
+    public Toolbar mtoolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,8 @@ public class Dashboard extends AppCompatActivity {
         recyclerViewCategory();
         recyclerViewBestDeals();
 
-       /*mtoolbar = findViewById(R.id.toolbar1);
-        setSupportActionBar(mtoolbar);*/
+      /*mtoolbar = findViewById(R.id.toolbar1);
+       setSupportActionBar(mtoolbar);*/
     }
 
     @Override
