@@ -38,7 +38,7 @@ import java.util.Arrays;
 public class Sign_up extends AppCompatActivity {
     private TextView ediTextEmail;
     private TextView editTextTextPassword;
-    private TextView editTextConfirm;
+    private TextView editTextConfirm,retailerlogin;
     private Button googlebtn;
     private Button facebookbtn;
     private Button createAccountbtn;
@@ -67,6 +67,7 @@ public class Sign_up extends AppCompatActivity {
         editTextConfirm = findViewById(R.id.editTextConfirm);
         mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
+        retailerlogin = findViewById(R.id.retailerlogin);
 
 
 
@@ -97,6 +98,13 @@ public class Sign_up extends AppCompatActivity {
 
         createAccountbtn.setOnClickListener(view -> {
             createUser();
+        });
+        retailerlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Sign_up.this, Retailerlogin.class);
+                startActivity(intent);
+            }
         });
 
 

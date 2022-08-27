@@ -29,8 +29,8 @@ public class Dashboard extends AppCompatActivity {
         recyclerViewCategory();
         recyclerViewBestDeals();
 
-      //  mtoolbar = findViewById(R.id.toolbar1);
-       // setSupportActionBar(mtoolbar);
+       /*mtoolbar = findViewById(R.id.toolbar1);
+        setSupportActionBar(mtoolbar);*/
     }
 
     @Override

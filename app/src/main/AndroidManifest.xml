@@ -22,11 +22,6 @@
             android:name=".Addproduct"
             android:exported="false" />
         <activity
-            android:name=".Drawer"
-            android:exported="false"
-            android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.Supapap.NoActionBar" />
-        <activity
             android:name=".ShowDetailsActivity"
             android:exported="false" />
         <activity
@@ -66,10 +61,10 @@
             android:name=".Activity_intro"
             android:exported="false" />
         <activity
-            android:name=".Log_in"
+            android:name=".Sign_up"
             android:exported="false" />
         <activity
-            android:name=".Sign_up"
+            android:name=".Log_in"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
