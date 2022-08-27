@@ -20,160 +20,139 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ffffff"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/addproductlayout"
         android:orientation="vertical"
         android:padding="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#C1DDFB"
             android:layout_marginBottom="3dp"
+            android:background="@drawable/addproduct5"
+            android:orientation="vertical"
+            app:cornerRadius="10dp">
+
+            <TextView
+                android:id="@+id/tv8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="9dp"
+                android:text="Add product name below"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/productName"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Colgate herbal 8g"
+                android:padding="8dp"
+                android:textColor="#8e8e8e"
+                android:textColorHint="#8e8e8e"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/addproduct5"
             android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add product name below"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="italic" />
+            <TextView
+                android:id="@+id/tv9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="9dp"
+                android:text="Add product type below"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="italic" />
 
-        <EditText
-            android:id="@+id/productName"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Colgate herbal 8g"
-            android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
-            android:textSize="14dp" />
+            <EditText
+                android:id="@+id/productType"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Toothpaste"
+                android:padding="8dp"
+                android:textColor="#8e8e8e"
+                android:textColorHint="#8e8e8e"
+                android:textSize="14dp" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D2E7FD"
-        android:layout_marginTop="3dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/tv9"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add product type below"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="italic" />
+            android:layout_marginTop="3dp"
+            android:background="@drawable/addproduct5"
+            android:orientation="vertical"
+            android:padding="3dp">
 
-        <EditText
-            android:id="@+id/productType"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Toothpaste"
-            android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
-            android:textSize="14dp" />
+            <TextView
+                android:id="@+id/categorytv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="9dp"
+                android:text="Choose category/shelf"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <Spinner
+                android:id="@+id/categorySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="Choose category"
+                android:padding="8dp"
+                android:textColor="#8e8e8e"
+                android:textColorHint="#5C3F3F"
+                android:textSize="14dp" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#E1EFFD"
-        android:layout_marginTop="3dp"
-        android:padding="3dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/categorytv"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="Choose category/shelf"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="italic" />
+            android:layout_marginTop="3dp"
+            android:background="@drawable/addproduct5"
+            android:orientation="vertical"
+            android:padding="3dp">
 
-        <Spinner
-            android:id="@+id/categorySpinner"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="Choose category"
-            android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#5C3F3F"
-            android:textSize="14dp" />
-        </LinearLayout>
+            <TextView
+                android:id="@+id/tv5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="9dp"
+                android:text="Add price in ksh"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="italic" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F1F8FF"
-        android:layout_marginTop="3dp"
-        android:padding="3dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/tv5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Add price in ksh"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="italic" />
-
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="20"
-            android:inputType="numberDecimal"
-            android:padding="10dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#FBBD00"
-            android:textSize="20dp" />
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F6FAFD"
-        android:layout_marginTop="3dp"
-        android:padding="3dp"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/tv6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="Enter product description"
-            android:textColor="#000000"
-            android:textSize="17sp"
-            android:textStyle="italic"/>
-
-        <EditText
-            android:id="@+id/priceTv"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="This is the best toothpaste you'll find in town"
-            android:inputType="textMultiLine"
-            android:padding="8dp"
-            android:textColor="#8e8e8e"
-            android:textColorHint="#8e8e8e"
-            android:textSize="14dp" />
+            <EditText
+                android:id="@+id/editTextText"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="15"
+                android:inputType="numberDecimal"
+                android:padding="10dp"
+                android:textColor="#8e8e8e"
+                android:textColorHint="#FBBD00"
+                android:textSize="20dp" />
         </LinearLayout>
 
 
@@ -202,28 +181,61 @@
             android:textSize="14dp" />-->
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/addproduct5"
+            android:orientation="vertical"
+            android:padding="3dp">
+
+            <TextView
+                android:id="@+id/tv6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="9dp"
+                android:text="Enter product description"
+                android:textColor="#000000"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <EditText
+                android:id="@+id/priceTv"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="This is the best toothpaste you'll find in town"
+                android:inputType="textMultiLine"
+                android:padding="8dp"
+                android:textColor="#8e8e8e"
+                android:textColorHint="#8e8e8e"
+                android:textSize="14dp" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:layout_gravity="center"
+            android:layout_marginBottom="16dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/addImageBtn"
-            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            app:cornerRadius = "10dp"
-            android:text="Upload image"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/addImageBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Upload image"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
         </LinearLayout>
 
 
-       <!-- <LinearLayout
+        <!-- <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
@@ -250,24 +262,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cornerRadius = "10dp"
             android:text="LOG IN"
             android:textColor="#000000"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:cornerRadius="10dp" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:elevation="8dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:elevation="8dp"
-            />
+            app:layout_constraintTop_toTopOf="parent" />
 
     </LinearLayout>
 
@@ -275,7 +286,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/free_delivery_background"
+        android:background="@drawable/addproducttitle"
         android:padding="16dp"
         android:text="Add your product"
         android:textColor="#1E1818"
