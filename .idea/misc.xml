@@ -6,6 +6,7 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable-v24/arrow_back-48px.xml" value="0.123" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable-v24/menu-48px.xml" value="0.123" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable-xxxhdpi/minusbtn.xml" value="0.2065" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/aboutusbg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/add_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/addproduct1.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/addproduct2.xml" value="0.1175" />
@@ -22,20 +23,31 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background3.xml" value="0.19" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background4.xml" value="0.19" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/cat_background5.xml" value="0.19" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/dark_mode_48px.xml" value="0.1175" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/darkmodebg.xml" value="0.1175" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/faqsbg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/free_delivery_background.xml" value="0.151" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/grey_top_cornered_background.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/half_white_background.xml" value="0.177" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/house_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/local_mall_48px.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/menu_48px.xml" value="0.1175" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/nightmodebg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/orange_button.xml" value="0.1155" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/orange_light_background.xml" value="0.151" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/ordersbg.xml" value="0.1175" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/paymentmethodsbg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/person_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/primebg.xml" value="0.12" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/red_button_background.xml" value="0.1155" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/remove_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/search_background.xml" value="0.131" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/securitybg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/settings_fill0_wght400_grad0_opsz48.xml" value="0.1845" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/settingsbg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/social_border_button.xml" value="0.1155" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/support_agent_fill0_wght400_grad0_opsz48.xml" value="0.1" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/textsizebg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_addproduct.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_forgotpassword.xml" value="0.18903508771929825" />
@@ -43,6 +55,7 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_log_in.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_retailerlogin.xml" value="0.18903508771929825" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_settings.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_show_details.xml" value="0.2469298245614035" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/content_drawer.xml" value="0.18903508771929825" />

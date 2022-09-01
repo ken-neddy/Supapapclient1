@@ -6,8 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.ImageView;
 
 import com.commerce.supapap.Adaptor.CategoryAdaptor;
 import com.commerce.supapap.Adaptor.PopularAdaptor;
@@ -19,7 +22,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapterBestDeals;
     private RecyclerView recyclerViewCategoryList, recyclerViewBestDeals;
-    public Toolbar mtoolbar;
+    private ImageView settingsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +32,18 @@ public class Dashboard extends AppCompatActivity {
         recyclerViewCategory();
         recyclerViewBestDeals();
 
+        settingsBtn = findViewById(R.id.settingsBtn);
+
       /*mtoolbar = findViewById(R.id.toolbar1);
        setSupportActionBar(mtoolbar);*/
+
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this, Settings.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

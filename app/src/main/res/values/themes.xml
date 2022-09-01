@@ -22,4 +22,10 @@
     <style name="Theme.Supapap.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Supapap.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    
+    <style name="nightmodeswitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/night_mode</item>
+        <item name="colorSwitchThumbNormal">#ffffff</item>
+        <item name="android:colorForeground">#99ffffff</item>
+    </style>
 </resources>
