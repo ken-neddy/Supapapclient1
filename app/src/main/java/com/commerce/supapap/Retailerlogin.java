@@ -92,7 +92,7 @@ public class Retailerlogin extends AppCompatActivity {
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         Toast.makeText(Retailerlogin.this, "success✔", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(Retailerlogin.this, Addproduct.class);
+                        Intent intent = new Intent(Retailerlogin.this, Productpic.class);
                         startActivity(intent);
                     }
 
@@ -169,7 +169,7 @@ public class Retailerlogin extends AppCompatActivity {
 
             // Signed in successfully, show authenticated UI.
             Toast.makeText(this, "success", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(Retailerlogin.this, Addproduct.class);
+            Intent intent = new Intent(Retailerlogin.this, Productpic.class);
             startActivity(intent);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
@@ -195,7 +195,7 @@ public class Retailerlogin extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(Retailerlogin.this, "success✔", Toast.LENGTH_LONG).show();
-                        startActivity(new Intent(Retailerlogin.this, Addproduct.class));
+                        startActivity(new Intent(Retailerlogin.this, Productpic.class));
                         progressBar.setVisibility(View.VISIBLE);
                     }else {
                         Toast.makeText(Retailerlogin.this, "Error❌:"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();

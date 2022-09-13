@@ -20,6 +20,9 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.github.ybq.android.spinkit.SpinKitView;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -44,7 +47,7 @@ public class Log_in extends AppCompatActivity {
     private CallbackManager callbackManager;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 007;
-    private ProgressBar progressBar;
+    private SpinKitView spinKitView;
 
 
     @Override
@@ -64,7 +67,8 @@ public class Log_in extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        spinKitView = findViewById(R.id.spin_kit);
+        spinKitView.setVisibility(View.VISIBLE);
 
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +96,8 @@ public class Log_in extends AppCompatActivity {
 
         log_inbtn.setOnClickListener(view -> {
             loginUser();
+            spinKitView.setVisibility(View.VISIBLE);
         });
-
 
         LoginManager.getInstance().registerCallback(callbackManager,
                 new FacebookCallback<LoginResult>() {
@@ -115,11 +119,8 @@ public class Log_in extends AppCompatActivity {
                     }
                 });
 
-
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         boolean isLoggedIn = accessToken != null && !accessToken.isExpired();
-
-
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -128,34 +129,29 @@ public class Log_in extends AppCompatActivity {
 
         // Build a GoogleSignInClient with the options specified by gso.
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-
         googlebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                spinKitView.setVisibility(View.VISIBLE);
                 switch (v.getId()) {
                     case R.id.googlebtn:
                         signIn();
                         break;
                 }
             }
+
         });
-
-
         facebookbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 LoginManager.getInstance().logInWithReadPermissions(Log_in.this, Arrays.asList("public_profile"));
             }
         });
     }
-
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         callbackManager.onActivityResult(requestCode, resultCode, data);
@@ -168,9 +164,7 @@ public class Log_in extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handleSignInResult(task);
         }
-
     }
-
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
@@ -186,7 +180,6 @@ public class Log_in extends AppCompatActivity {
 
         }
     }
-
     private void loginUser(){
         String email=editTextTextEmail.getText().toString();
         String password = editTextTextPassword.getText().toString();
@@ -204,15 +197,13 @@ public class Log_in extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(Log_in.this, "success✔", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(Log_in.this, Dashboard.class));
-                        progressBar.setVisibility(View.VISIBLE);
+                        spinKitView.setVisibility(View.VISIBLE);
                     }else {
                         Toast.makeText(Log_in.this, "Error❌:"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
+//                        spinKitView.setVisibility(View.GONE);
                     }
                 }
             });
         }
     }
-
-
 }

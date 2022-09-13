@@ -28,4 +28,10 @@
         <item name="colorSwitchThumbNormal">#ffffff</item>
         <item name="android:colorForeground">#99ffffff</item>
     </style>
+
+    @style/SpinKitView
+    @style/SpinKitView.Circle
+    @style/SpinKitView.Large
+    @style/SpinKitView.Small
+    @style/SpinKitView.Small.DoubleBounce
 </resources>

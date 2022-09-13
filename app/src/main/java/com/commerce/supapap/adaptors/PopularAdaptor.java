@@ -1,4 +1,4 @@
-package com.commerce.supapap.Adaptor;
+package com.commerce.supapap.adaptors;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,12 +7,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.commerce.supapap.Domain.BestDealsDomain;
+import com.commerce.supapap.domains.BestDealsDomain;
 import com.commerce.supapap.R;
 
 import java.util.ArrayList;

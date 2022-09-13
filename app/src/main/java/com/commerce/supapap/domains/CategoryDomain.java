@@ -1,4 +1,4 @@
-package com.commerce.supapap.Domain;
+package com.commerce.supapap.domains;
 
 public class CategoryDomain {
     private String title;

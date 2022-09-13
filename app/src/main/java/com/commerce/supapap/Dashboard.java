@@ -2,7 +2,6 @@ package com.commerce.supapap;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -12,10 +11,10 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.commerce.supapap.Adaptor.CategoryAdaptor;
-import com.commerce.supapap.Adaptor.PopularAdaptor;
-import com.commerce.supapap.Domain.BestDealsDomain;
-import com.commerce.supapap.Domain.CategoryDomain;
+import com.commerce.supapap.adaptors.CategoryAdaptor;
+import com.commerce.supapap.adaptors.PopularAdaptor;
+import com.commerce.supapap.domains.BestDealsDomain;
+import com.commerce.supapap.domains.CategoryDomain;
 
 import java.util.ArrayList;
 
