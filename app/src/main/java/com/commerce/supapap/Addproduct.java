@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.UUID;
+
 public class Addproduct extends AppCompatActivity {
 
     StorageReference storageReference;
@@ -77,7 +79,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("Descriptionsfolder").child("mydescriptions").setValue(productName);
+            databaseReference.child(UUID.randomUUID().toString()).child("Descriptionsfolder").child("mydescriptions").setValue(productName);
             Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }

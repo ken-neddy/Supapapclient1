@@ -33,6 +33,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 
 public class Sign_up extends AppCompatActivity {
@@ -49,6 +50,7 @@ public class Sign_up extends AppCompatActivity {
     private static final int RC_SIGN_IN = 007;
     private static final int REQ_ONE_TAP = 2;
     private boolean showOneTapUI = true;
+    String userId;
 
 
 
@@ -68,6 +70,7 @@ public class Sign_up extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
         retailerlogin = findViewById(R.id.retailerlogin);
+        userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
 
 
@@ -202,6 +205,7 @@ public class Sign_up extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         User user = new User(email);
+                        FirebaseDatabase.getInstance().getReference().child(userId);
                         FirebaseDatabase.getInstance().getReference("Users")
                                 .setValue(user)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {

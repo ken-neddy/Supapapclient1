@@ -35,6 +35,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 import java.util.UUID;
 
 import androidx.annotation.NonNull;
@@ -55,6 +56,7 @@ public class Productpic extends AppCompatActivity {
     String currentPhotoPath;
     StorageReference storageReference;
     DatabaseReference databaseReference;
+    private String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,9 +66,9 @@ public class Productpic extends AppCompatActivity {
         Gallery = findViewById(R.id.Gallery);
         imageView = findViewById(R.id.ImageView);
         mAuth = FirebaseAuth.getInstance();
-        userId = mAuth.getCurrentUser().getUid();
+      userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
         storageReference = FirebaseStorage.getInstance().getReference();
-        databaseReference = FirebaseDatabase.getInstance().getReference(userId);
+     databaseReference = FirebaseDatabase.getInstance().getReference();
 
         idcapturepic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +153,7 @@ public class Productpic extends AppCompatActivity {
         final ProgressDialog progressDialog = new ProgressDialog(this);
         progressDialog.setTitle("Please wait");
         progressDialog.show();
-        StorageReference image = storageReference.child("images/" + name);
+        StorageReference image = storageReference.child(userId).child("images/" + name);
         image.putFile(contentUri).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
@@ -166,13 +168,16 @@ public class Productpic extends AppCompatActivity {
                                 .addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
-                                        databaseReference.child(UUID.randomUUID().toString()).child("new Image").setValue(String.valueOf(uri))
+                                        databaseReference = FirebaseDatabase.getInstance().getReference();
+                                        databaseReference.child(userId).child("new Image")
+                                                .setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                     }
                                                 });
                                         Log.d("Tag", "Success : Uploaded Uri is " + uri.toString());
+                                       // Toast.makeText(Productpic.this, "... " + UUID.randomUUID().toString() , Toast.LENGTH_LONG).show();
                                     }
                                 });
                         progressDialog.dismiss();
@@ -239,6 +244,14 @@ public class Productpic extends AppCompatActivity {
                 startActivityForResult(takePictureIntent, CAMERA_REQUEST_CODE);
             }
         }
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }
 
