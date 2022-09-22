@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Addproduct extends AppCompatActivity {
@@ -31,6 +32,7 @@ public class Addproduct extends AppCompatActivity {
     String userId;
     private TextView productName;
     private Button uploaddata,addImageBtn;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -38,8 +40,7 @@ public class Addproduct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproduct);
         Spinner categorySpinner= findViewById(R.id.categorySpinner);
-        ArrayAdapter<String> categorySpinnerAdapter = new ArrayAdapter<String>(Addproduct.this,
-               android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.nameCategorySpinner));
+        ArrayAdapter<String> categorySpinnerAdapter = new ArrayAdapter<String>(Addproduct.this, android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.nameCategorySpinner));
         categorySpinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categorySpinner.setAdapter(categorySpinnerAdapter);
 
@@ -49,6 +50,8 @@ public class Addproduct extends AppCompatActivity {
         ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
         Sprite doubleBounce = new DoubleBounce();
         progressBar.setIndeterminateDrawable(doubleBounce);
+        mAuth = FirebaseAuth.getInstance();
+        userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
 
 
@@ -79,7 +82,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child(UUID.randomUUID().toString()).child("Descriptionsfolder").child("mydescriptions").setValue(productName);
+            databaseReference.child(userId).child("Product name").setValue(productName);
             Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }

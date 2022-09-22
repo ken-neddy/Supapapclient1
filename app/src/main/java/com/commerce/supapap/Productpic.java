@@ -24,8 +24,11 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -52,11 +55,12 @@ public class Productpic extends AppCompatActivity {
     ImageView imageView;
     FirebaseAuth mAuth;
     String userId;
+    String pushId;
     Button idcapturepic, Gallery;
     String currentPhotoPath;
     StorageReference storageReference;
     DatabaseReference databaseReference;
-    private String key;
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,15 +173,29 @@ public class Productpic extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         databaseReference = FirebaseDatabase.getInstance().getReference();
-                                        databaseReference.child(userId).child("new Image")
+                                        databaseReference.child(userId).push().child("Product")
                                                 .setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                     }
                                                 });
+                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                                for (DataSnapshot datas : dataSnapshot.getChildren()) {
+                                                    String key=datas.getKey();
+                                                }
+                                            }
+
+                                            @Override
+                                            public void onCancelled(DatabaseError databaseError) {
+
+                                            }
+                                        });
                                         Log.d("Tag", "Success : Uploaded Uri is " + uri.toString());
                                        // Toast.makeText(Productpic.this, "... " + UUID.randomUUID().toString() , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Productpic.this, "... " + key , Toast.LENGTH_LONG).show();
                                     }
                                 });
                         progressDialog.dismiss();
