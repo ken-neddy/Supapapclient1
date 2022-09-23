@@ -30,9 +30,10 @@ public class Addproduct extends AppCompatActivity {
     StorageReference storageReference;
     DatabaseReference databaseReference;
     String userId;
-    private TextView productName;
+    private TextView productName,tv8;
     private Button uploaddata,addImageBtn;
     FirebaseAuth mAuth;
+    String newkey;
 
 
     @Override
@@ -45,6 +46,7 @@ public class Addproduct extends AppCompatActivity {
         categorySpinner.setAdapter(categorySpinnerAdapter);
 
         productName = findViewById(R.id.productName);
+        tv8 = findViewById(R.id.tv8);
         uploaddata = findViewById(R.id.uploaddata);
         /*addImageBtn = findViewById(R.id.addImageBtn);*/
         ProgressBar progressBar = (ProgressBar)findViewById(R.id.spin_kit);
@@ -53,6 +55,10 @@ public class Addproduct extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
+        Intent i = getIntent();
+       String key1 = i.getStringExtra("productId");
+        tv8.setText(key1);
+       Toast.makeText(Addproduct.this, "... " + key1 , Toast.LENGTH_LONG).show();
 
 
         uploaddata.setOnClickListener(new View.OnClickListener() {

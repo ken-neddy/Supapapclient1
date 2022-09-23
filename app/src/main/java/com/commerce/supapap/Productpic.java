@@ -52,6 +52,7 @@ public class Productpic extends AppCompatActivity {
     public static final int CAMERA_PERM_CODE = 101;
     public static final int CAMERA_REQUEST_CODE = 102;
     public static final int GALLERY_REQUEST_CODE = 105;
+    public static final String EXTRA_ID = "product id";
     ImageView imageView;
     FirebaseAuth mAuth;
     String userId;
@@ -162,7 +163,7 @@ public class Productpic extends AppCompatActivity {
                     @Override
                     public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
                         double progress = (100.0*snapshot.getBytesTransferred())/snapshot.getTotalByteCount();
-                        progressDialog.setMessage("" + (int)progress+"%");
+                        progressDialog.setMessage("loading" + (int)progress+"%");
                     }
                 })
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -173,29 +174,33 @@ public class Productpic extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         databaseReference = FirebaseDatabase.getInstance().getReference();
-                                        databaseReference.child(userId).push().child("Product")
-                                                .setValue(String.valueOf(uri))
+                                       String key1 = databaseReference.push().getKey();
+
+                                               databaseReference.child(userId).child(key1).setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                     }
                                                 });
-                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-                                            @Override
-                                            public void onDataChange(DataSnapshot dataSnapshot) {
-                                                for (DataSnapshot datas : dataSnapshot.getChildren()) {
-                                                    String key=datas.getKey();
-                                                }
-                                            }
 
-                                            @Override
-                                            public void onCancelled(DatabaseError databaseError) {
-
-                                            }
-                                        });
+//                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//                                            @Override
+//                                            public void onDataChange(DataSnapshot dataSnapshot) {
+//                                                for (DataSnapshot datas : dataSnapshot.getChildren()) {
+//                                                    String key=datas.getKey();
+//                                                }
+//                                            }
+//
+//                                            @Override
+//                                            public void onCancelled(DatabaseError databaseError) {
+//
+//                                            }
+//                                        });
                                         Log.d("Tag", "Success : Uploaded Uri is " + uri.toString());
                                        // Toast.makeText(Productpic.this, "... " + UUID.randomUUID().toString() , Toast.LENGTH_LONG).show();
-                                        Toast.makeText(Productpic.this, "... " + key , Toast.LENGTH_LONG).show();
+                                        Toast.makeText(Productpic.this, "... " + key1 , Toast.LENGTH_LONG).show();
+                                        Intent i = new Intent(Productpic.this,Addproduct.class);
+                                        i.putExtra("productId",key1);
                                     }
                                 });
                         progressDialog.dismiss();
