@@ -53,7 +53,8 @@ public class Productpic extends AppCompatActivity {
     public static final int CAMERA_REQUEST_CODE = 102;
     public static final int GALLERY_REQUEST_CODE = 105;
     public static final String EXTRA_ID = "product id";
-    ImageView imageView;
+    public static final String EXTRA_NAME = "EXTRA_NAME";
+    ImageView imageView1;
     FirebaseAuth mAuth;
     String userId;
     String pushId;
@@ -69,11 +70,12 @@ public class Productpic extends AppCompatActivity {
         setContentView(R.layout.activity_productpic);
         idcapturepic = findViewById(R.id.idcapturepic);
         Gallery = findViewById(R.id.Gallery);
-        imageView = findViewById(R.id.ImageView);
+        imageView1 = findViewById(R.id.ImageView1);
         mAuth = FirebaseAuth.getInstance();
-      userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+      userId = mAuth.getCurrentUser().getUid();
         storageReference = FirebaseStorage.getInstance().getReference();
      databaseReference = FirebaseDatabase.getInstance().getReference();
+
 
         idcapturepic.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,7 +124,7 @@ public class Productpic extends AppCompatActivity {
         if (requestCode == CAMERA_REQUEST_CODE){
             if (resultCode == Activity.RESULT_OK){
                 File f = new File(currentPhotoPath);
-                imageView.setImageURI(Uri.fromFile(f));
+                imageView1.setImageURI(Uri.fromFile(f));
                 View view = new View(this);
                 view.setBackgroundDrawable(null);
                 Log.d("Tag", "Absolute Url of Image is" + Uri.fromFile(f));
@@ -143,7 +145,7 @@ public class Productpic extends AppCompatActivity {
                 String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
                 String imageFileName = "JPEG_" + timeStamp + "." + getFileExt(contentUri);
                 Log.d("tag", "onActivityResult:Gallery Image Uri: "+ imageFileName);
-                imageView.setImageURI(contentUri);
+                imageView1.setImageURI(contentUri);
 //                View view = new View(this);
 //                view.setBackgroundDrawable(null);
                 uploadImageToFirebase(imageFileName, contentUri);
@@ -175,8 +177,7 @@ public class Productpic extends AppCompatActivity {
                                     public void onSuccess(Uri uri) {
                                         databaseReference = FirebaseDatabase.getInstance().getReference();
                                        String key1 = databaseReference.push().getKey();
-
-                                               databaseReference.child(userId).child(key1).setValue(String.valueOf(uri))
+                                               databaseReference.child(userId).child(key1).child("image").setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
@@ -198,14 +199,16 @@ public class Productpic extends AppCompatActivity {
 //                                        });
                                         Log.d("Tag", "Success : Uploaded Uri is " + uri.toString());
                                        // Toast.makeText(Productpic.this, "... " + UUID.randomUUID().toString() , Toast.LENGTH_LONG).show();
-                                        Toast.makeText(Productpic.this, "... " + key1 , Toast.LENGTH_LONG).show();
+                                       // Toast.makeText(Productpic.this, "... " + key1 , Toast.LENGTH_LONG).show();
+                                      //  String keyg = key1.getBytes().toString();
                                         Intent i = new Intent(Productpic.this,Addproduct.class);
-                                        i.putExtra("productId",key1);
+                                        i.putExtra("EXTRA_NAME",key1);
+                                        startActivity(i);
                                     }
                                 });
                         progressDialog.dismiss();
                         Snackbar.make(findViewById(android.R.id.content), "Image uploaded successfully", Snackbar.LENGTH_LONG).show();
-                        startActivity(new Intent(Productpic.this, Addproduct.class));
+                       // startActivity(new Intent(Productpic.this, Addproduct.class));
 
                     }
 

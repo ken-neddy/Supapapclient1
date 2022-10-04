@@ -21,7 +21,7 @@
 
 
     <ImageView
-        android:id="@+id/ImageView"
+        android:id="@+id/ImageView1"
         android:layout_width="356dp"
         android:layout_height="324dp"
         android:layout_marginTop="28dp"
@@ -40,7 +40,7 @@
         app:layout_constraintBottom_toTopOf="@id/idcapturepic"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ImageView" />
+        app:layout_constraintTop_toBottomOf="@id/ImageView1" />
 
     <Button
         android:id="@+id/idcapturepic"

@@ -3,8 +3,10 @@ package com.commerce.supapap;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -33,7 +35,6 @@ public class Addproduct extends AppCompatActivity {
     private TextView productName,tv8;
     private Button uploaddata,addImageBtn;
     FirebaseAuth mAuth;
-    String newkey;
 
 
     @Override
@@ -55,16 +56,20 @@ public class Addproduct extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
-        Intent i = getIntent();
-       String key1 = i.getStringExtra("productId");
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
         tv8.setText(key1);
-       Toast.makeText(Addproduct.this, "... " + key1 , Toast.LENGTH_LONG).show();
-
+        Log.d("ufunguo", "This is the key... " + key1);
 
         uploaddata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 savenamemethod();
+                savedescriptionmethod();
+                savepricemethod();
+                savecategorymethod();
+                saveproducttypemethod();
+                Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -81,6 +86,8 @@ public class Addproduct extends AppCompatActivity {
     private void savenamemethod() {
         EditText editText = findViewById(R.id.productName);
         String productName = editText.getText().toString().trim();
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
         if (TextUtils.isEmpty(productName)) {
             editText.setError("please fill");
             editText.requestFocus();
@@ -88,8 +95,71 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child(userId).child("Product name").setValue(productName);
-            Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+            databaseReference.child(userId).child(key1).child("Product name").setValue(productName);
+           // Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+        }
+    }
+    private void saveproducttypemethod() {
+        EditText editText = findViewById(R.id.productType);
+        String productName = editText.getText().toString().trim();
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
+        if (TextUtils.isEmpty(productName)) {
+            editText.setError("please fill");
+            editText.requestFocus();
+        } else{
+            //   storageReference = FirebaseStorage.getInstance().getReference();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            String upload = databaseReference.push().getKey();
+            databaseReference.child(userId).child(key1).child("Product type").setValue(productName);
+           // Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+        }
+    }
+    private void savecategorymethod() {
+        Spinner spinner = findViewById(R.id.categorySpinner);
+        String productName = spinner.getSelectedItem().toString().trim();
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
+        if (TextUtils.isEmpty(productName)) {
+            spinner.requestFocus();
+        } else{
+            //   storageReference = FirebaseStorage.getInstance().getReference();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            String upload = databaseReference.push().getKey();
+            databaseReference.child(userId).child(key1).child("Product category").setValue(productName);
+          //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+        }
+    }
+    private void savepricemethod() {
+        EditText editText = findViewById(R.id.price);
+        String productName = editText.getText().toString().trim();
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
+        if (TextUtils.isEmpty(productName)) {
+            editText.setError("please fill");
+            editText.requestFocus();
+        } else{
+            //   storageReference = FirebaseStorage.getInstance().getReference();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            String upload = databaseReference.push().getKey();
+            databaseReference.child(userId).child(key1).child("Product price").setValue(productName);
+          //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+        }
+    }
+    private void savedescriptionmethod() {
+        EditText editText = findViewById(R.id.description);
+        String productName = editText.getText().toString().trim();
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
+        if (TextUtils.isEmpty(productName)) {
+            editText.setError("please fill");
+            editText.requestFocus();
+        } else{
+            //   storageReference = FirebaseStorage.getInstance().getReference();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            String upload = databaseReference.push().getKey();
+            databaseReference.child(userId).child(key1).child("Product description").setValue(productName);
+          //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }
 }
