@@ -17,7 +17,7 @@
         android:roundIcon="@drawable/logo3"
         android:supportsRtl="true"
         android:theme="@style/Theme.Supapap"
-        tools:targetApi="31">
+        tools:targetApi="32">
         <activity
             android:name=".Productpic"
             android:exported="false" />

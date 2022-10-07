@@ -97,7 +97,7 @@
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:id="@+id/textView6"
+                    android:id="@+id/searchbar"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_marginStart="32dp"
@@ -115,81 +115,21 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout2"
+                <com.denzcoskun.imageslider.ImageSlider
+                    android:id="@+id/slider"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="32dp"
-                    android:background="@drawable/orange_light_background"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6">
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="224dp"
-                        android:layout_height="150dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/logo" />
-
-                    <TextView
-                        android:id="@+id/textView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Free delivery"
-                        android:textColor="@color/black"
-                        android:textSize="16dp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/imageView4"
-                        app:layout_constraintTop_toTopOf="@+id/imageView4" />
-
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="1dp"
-                        android:layout_marginTop="100dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="2dp"
-                        android:text="30th jul-5th Aug"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageView4"
-                        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="86dp"
-                            android:layout_height="22dp"
-                            android:layout_marginStart="230dp"
-                            android:layout_marginTop="105dp"
-                            android:layout_marginEnd="15dp"
-                            android:layout_marginBottom="43dp"
-                            android:background="@drawable/free_delivery_background"
-                            android:gravity="center"
-                            android:text="ORDER NOW"
-                            android:textAlignment="center"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                            android:textSize="12dp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_height="200dp"
+                    android:layout_margin="20dp"
+                    android:layout_marginTop="20dp"
+                    app:iss_auto_cycle="true"
+                    app:iss_corner_radius="20"
+                    app:iss_delay="0"
+                    app:iss_error_image="@color/purple_700"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/searchbar"
+                    app:iss_period="3000"
+                    app:iss_placeholder="@color/black" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -202,7 +142,7 @@
                     android:textSize="18dp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+                    app:layout_constraintTop_toBottomOf="@+id/slider" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerView"
