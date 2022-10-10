@@ -117,19 +117,19 @@
 
                 <com.denzcoskun.imageslider.ImageSlider
                     android:id="@+id/slider"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:layout_margin="20dp"
+                    android:layout_width="300dp"
+                    android:layout_height="175dp"
+                    android:layout_margin="30dp"
                     android:layout_marginTop="20dp"
                     app:iss_auto_cycle="true"
                     app:iss_corner_radius="20"
                     app:iss_delay="0"
                     app:iss_error_image="@color/purple_700"
+                    app:iss_period="3000"
+                    app:iss_placeholder="@color/black"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/searchbar"
-                    app:iss_period="3000"
-                    app:iss_placeholder="@color/black" />
+                    app:layout_constraintTop_toBottomOf="@id/searchbar" />
 
                 <TextView
                     android:id="@+id/textView14"

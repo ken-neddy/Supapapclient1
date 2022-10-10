@@ -49,7 +49,7 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/support_agent_fill0_wght400_grad0_opsz48.xml" value="0.1" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/drawable/textsizebg.xml" value="0.1175" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_addproduct.xml" value="0.18903508771929825" />
-        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_dashboard.xml" value="0.1" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_dashboard.xml" value="0.18" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_forgotpassword.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_intro.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_log_in.xml" value="0.22" />
@@ -61,7 +61,8 @@
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/activity_sign_up.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/content_drawer.xml" value="0.18903508771929825" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/fragment_home.xml" value="0.1" />
-        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/viewholder_bestdeals.xml" value="0.2469298245614035" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/switch_item.xml" value="0.2469298245614035" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/viewholder_bestdeals.xml" value="0.25" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/layout/viewholder_category.xml" value="0.5" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/Supapap/app/src/main/res/menu/main_menu.xml" value="0.18903508771929825" />

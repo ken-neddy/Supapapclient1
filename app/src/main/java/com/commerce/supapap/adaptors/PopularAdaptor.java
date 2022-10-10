@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.commerce.supapap.domains.BestDealsDomain;
 import com.commerce.supapap.R;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewholder>{
@@ -34,6 +35,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewhold
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
         holder.title.setText(bestDealsDomains.get(position).getTitle());
         holder.fee.setText(String.valueOf(bestDealsDomains.get(position).getFee()));
+        holder.description1.setText(String.valueOf(bestDealsDomains.get(position).getDescription()));
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(bestDealsDomains.get(position).getPic(),"drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
@@ -47,6 +49,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewhold
     }
 
     public class Viewholder extends RecyclerView.ViewHolder{
+        TextView description1;
         TextView title,fee;
         ImageView pic;
         TextView addBtn;
@@ -56,6 +59,7 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewhold
                 fee = itemView.findViewById(R.id.fee);
                 pic = itemView.findViewById(R.id.pic);
                 addBtn = itemView.findViewById(R.id.addBtn);
+                description1 = itemView.findViewById(R.id.description1);
         }
     }
 }
