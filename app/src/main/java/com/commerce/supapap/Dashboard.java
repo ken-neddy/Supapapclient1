@@ -86,6 +86,12 @@ public class Dashboard extends AppCompatActivity {
         category.add(new CategoryDomain("Cereals", "logo3"));
         category.add(new CategoryDomain("Pharmacy", "logo3"));
         category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
+        category.add(new CategoryDomain("Spices", "logo3"));
 
         adapter = new CategoryAdaptor(category);
         recyclerViewCategoryList.setAdapter(adapter);

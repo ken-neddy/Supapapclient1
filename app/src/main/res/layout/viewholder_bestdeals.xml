@@ -26,13 +26,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:text="title"
-        android:textColor="#373b54"
         android:textSize="17sp"
+        android:textColor="#373b54"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toEndOf="@+id/pic"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,8 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
+        android:textColor="@color/black"
         android:text="0.00"
-        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toEndOf="@+id/textView13"
@@ -55,7 +57,7 @@
         android:layout_marginStart="60dp"
         android:layout_marginTop="8dp"
         android:text="Ksh"
-        android:textColor="#E4816A"
+        android:textColor="#574E4E"
         app:layout_constraintStart_toEndOf="@+id/pic"
         app:layout_constraintTop_toBottomOf="@+id/description1" />
 
@@ -66,7 +68,7 @@
         android:layout_marginStart="36dp"
         android:layout_margin="6dp"
         android:text="This is the best pasi around.Moto sana"
-        android:textColor="#E4816A"
+        android:textColor="#504D4C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/pic"
         app:layout_constraintTop_toBottomOf="@+id/title" />

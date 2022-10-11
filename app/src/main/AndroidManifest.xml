@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Supapap"
         tools:targetApi="32">
         <activity
+            android:name=".Cart"
+            android:exported="false" />
+        <activity
             android:name=".Productpic"
             android:exported="false" />
         <activity

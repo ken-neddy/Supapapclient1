@@ -76,6 +76,31 @@ public class CategoryAdaptor extends RecyclerView.Adapter<CategoryAdaptor.Viewho
                 holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background4));
                 break;
             }
+            case 8:{
+                picUrl = "spices_667115_1920_removebg_preview";
+                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background1));
+                break;
+            }
+            case 9:{
+                picUrl = "spices_667115_1920_removebg_preview";
+                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background2));
+                break;
+            }
+            case 10:{
+                picUrl = "spices_667115_1920_removebg_preview";
+                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background3));
+                break;
+            }
+            case 11:{
+                picUrl = "nuts_3248743_1920_removebg_preview";
+                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background4));
+                break;
+            }
+            case 12:{
+                picUrl = "spices_667115_1920_removebg_preview";
+                holder.mainLayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(),R.drawable.cat_background5));
+                break;
+            }
 
         }
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(picUrl,"drawable", holder.itemView.getContext().getPackageName());

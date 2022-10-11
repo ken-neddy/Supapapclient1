@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Cart">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/topappbar"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/backbtn"
+            android:layout_centerVertical="true"
+            android:src="@drawable/arrow_back_48px"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingStart="7dp"
+            android:paddingEnd="7dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/addproduct3"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:text="locationxy"
+                android:textColor="#274F70"
+                android:textSize="15dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/menubtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/menu_48px" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@id/topappbar"
+        tools:layout_editor_absoluteX="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cartrecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
