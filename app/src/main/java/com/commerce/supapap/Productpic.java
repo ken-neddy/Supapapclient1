@@ -177,7 +177,7 @@ public class Productpic extends AppCompatActivity {
                                     public void onSuccess(Uri uri) {
                                         databaseReference = FirebaseDatabase.getInstance().getReference();
                                        String key1 = databaseReference.push().getKey();
-                                               databaseReference.child(userId).child(key1).child("image").setValue(String.valueOf(uri))
+                                               databaseReference.child("products").child(userId).child(key1).child("image").setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {

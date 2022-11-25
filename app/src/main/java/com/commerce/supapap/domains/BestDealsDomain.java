@@ -1,41 +1,41 @@
 package com.commerce.supapap.domains;
 
 public class BestDealsDomain {
-    private String title;
-    private String pic;
+    private String name;
+    private String image;
     private String description;
-    private Double fee;
-    private int numberInCart;
+    private Double price;
+    private int stock;
 
-    public BestDealsDomain(String title, String pic, String description, Double fee) {
-        this.title = title;
-        this.pic = pic;
+//    public BestDealsDomain(String title, String pic, String description, Double fee) {
+//        this.title = title;
+//        this.pic = pic;
+//        this.description = description;
+//        this.fee = fee;
+//    }
+
+    public BestDealsDomain(String name, String image, String description, Double price, int stock) {
+        this.name = name;
+        this.image = image;
         this.description = description;
-        this.fee = fee;
+        this.price = price;
+        this.stock = stock;
     }
 
-    public BestDealsDomain(String title, String pic, String description, Double fee, int numberInCart) {
-        this.title = title;
-        this.pic = pic;
-        this.description = description;
-        this.fee = fee;
-        this.numberInCart = numberInCart;
+    public String getName() {
+        return name;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPic() {
-        return pic;
+        return image;
     }
 
-    public void setPic(String pic) {
-        this.pic = pic;
+    public void setImage(String pic) {
+        this.image = pic;
     }
 
     public String getDescription() {
@@ -46,19 +46,19 @@ public class BestDealsDomain {
         this.description = description;
     }
 
-    public Double getFee() {
-        return fee;
+    public Double getPrice() {
+        return price;
     }
 
-    public void setFee(Double fee) {
-        this.fee = fee;
+    public void setPrice(Double price) {
+        this.price = price;
     }
 
-    public int getNumberInCart() {
-        return numberInCart;
+    public int getStock() {
+        return stock;
     }
 
-    public void setNumberInCart(int numberInCart) {
-        this.numberInCart = numberInCart;
+    public void setStock(int stock) {
+        this.stock = stock;
     }
 }

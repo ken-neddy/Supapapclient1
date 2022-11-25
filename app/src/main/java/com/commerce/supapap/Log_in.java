@@ -34,6 +34,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Log_in extends AppCompatActivity {
     private TextView editTextTextEmail;
@@ -47,7 +49,10 @@ public class Log_in extends AppCompatActivity {
     private CallbackManager callbackManager;
     private GoogleSignInClient mGoogleSignInClient;
     private static final int RC_SIGN_IN = 007;
-    private SpinKitView spinKitView;
+    ProgressBar progressBar;
+    int count = 0;
+    Timer timer;
+
 
 
     @Override
@@ -67,8 +72,20 @@ public class Log_in extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
-        spinKitView = findViewById(R.id.spin_kit);
-        spinKitView.setVisibility(View.VISIBLE);
+        progressBar = findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.VISIBLE);
+        timer = new Timer();
+        TimerTask timerTask=new TimerTask() {
+            @Override
+            public void run() {
+                count++;
+                progressBar.setProgress(count);
+                if (count==100){
+                    timer.cancel();
+                }
+            }
+        };
+        timer.schedule(timerTask,0,100);
 
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,7 +113,7 @@ public class Log_in extends AppCompatActivity {
 
         log_inbtn.setOnClickListener(view -> {
             loginUser();
-            spinKitView.setVisibility(View.VISIBLE);
+            progressBar.setVisibility(View.VISIBLE);
         });
 
         LoginManager.getInstance().registerCallback(callbackManager,
@@ -132,7 +149,8 @@ public class Log_in extends AppCompatActivity {
         googlebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                spinKitView.setVisibility(View.VISIBLE);
+               // spinKitView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.VISIBLE);
                 switch (v.getId()) {
                     case R.id.googlebtn:
                         signIn();
@@ -197,7 +215,7 @@ public class Log_in extends AppCompatActivity {
                     if (task.isSuccessful()){
                         Toast.makeText(Log_in.this, "success✔", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(Log_in.this, Dashboard.class));
-                        spinKitView.setVisibility(View.VISIBLE);
+                        progressBar.setVisibility(View.VISIBLE);
                     }else {
                         Toast.makeText(Log_in.this, "Error❌:"+ task.getException().getMessage(), Toast.LENGTH_LONG).show();
 //                        spinKitView.setVisibility(View.GONE);

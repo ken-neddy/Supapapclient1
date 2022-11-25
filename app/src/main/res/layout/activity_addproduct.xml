@@ -272,6 +272,70 @@
             android:orientation="horizontal">
         </LinearLayout>-->
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/minusinadd"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_gravity="start"
+                android:text="-"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+
+            <TextView
+                android:id="@+id/nic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_margin="7dp"
+                android:layout_toRightOf="@id/minusinadd"
+                android:text="Items in stock"
+                android:textSize="16dp"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/numberinstock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginBottom="7dp"
+                android:layout_toRightOf="@+id/nic"
+                android:text="0"
+                android:textColor="@color/grey_font"
+                android:textSize="18dp">
+
+            </TextView>
+
+            <Button
+                android:id="@+id/addinadd"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="+"
+                android:layout_alignParentEnd="true"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="10dp" />
+        </RelativeLayout>
+
         <Button
             android:id="@+id/uploaddata"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"

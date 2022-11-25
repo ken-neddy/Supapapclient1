@@ -33,8 +33,8 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewhold
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-        holder.title.setText(bestDealsDomains.get(position).getTitle());
-        holder.fee.setText(String.valueOf(bestDealsDomains.get(position).getFee()));
+        holder.name.setText(bestDealsDomains.get(position).getName());
+        holder.price.setText(String.valueOf(bestDealsDomains.get(position).getPrice()));
         holder.description1.setText(String.valueOf(bestDealsDomains.get(position).getDescription()));
         int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(bestDealsDomains.get(position).getPic(),"drawable", holder.itemView.getContext().getPackageName());
 
@@ -50,13 +50,13 @@ public class PopularAdaptor extends RecyclerView.Adapter<PopularAdaptor.Viewhold
 
     public class Viewholder extends RecyclerView.ViewHolder{
         TextView description1;
-        TextView title,fee;
+        TextView name,price;
         ImageView pic;
         TextView addBtn;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-                title = itemView.findViewById(R.id.title);
-                fee = itemView.findViewById(R.id.fee);
+                name = itemView.findViewById(R.id.title);
+                price = itemView.findViewById(R.id.fee);
                 pic = itemView.findViewById(R.id.pic);
                 addBtn = itemView.findViewById(R.id.addBtn);
                 description1 = itemView.findViewById(R.id.description1);
