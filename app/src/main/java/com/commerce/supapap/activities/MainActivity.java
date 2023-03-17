@@ -1,14 +1,16 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Settings extends AppCompatActivity {
+import com.commerce.supapap.R;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.activity_main);
     }
 }

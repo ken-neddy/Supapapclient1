@@ -1,4 +1,4 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.commerce.supapap.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -30,7 +31,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 
 import java.util.Arrays;
 import java.util.Objects;
@@ -70,7 +70,7 @@ public class Sign_up extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         callbackManager = CallbackManager.Factory.create();
         retailerlogin = findViewById(R.id.retailerlogin);
-        userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+      //  userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
 
 
@@ -205,6 +205,7 @@ public class Sign_up extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         User user = new User(email);
+                        userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
                         FirebaseDatabase.getInstance().getReference().child(userId);
                         FirebaseDatabase.getInstance().getReference("Users")
                                 .setValue(user)

@@ -1,44 +1,25 @@
-package com.commerce.supapap.domains;
+package com.commerce.supapap.Dbtest;
 
-import android.util.Log;
+public class BDFetchData {
+    String name,description,price,productkey;
 
-public class BestDealsDomain {
-    private String name,image;
-    private String description;
-    private String price;
-    private String productkey;
-
-    public BestDealsDomain() {
+    public BDFetchData() {
     }
 
-
-    public BestDealsDomain(String name, String image, String description, String price,String productkey) {
+    public BDFetchData(String name, String description, String price,String productkey) {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.image = image;
-        this.productkey = productkey;
-        ;
+        this.productkey=productkey;
     }
 
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String pic) {
-        this.image = pic;
-    }
-
-
 
     public String getDescription() {
         return description;
@@ -48,16 +29,13 @@ public class BestDealsDomain {
         this.description = description;
     }
 
-
-
     public String getPrice() {
-        return String.valueOf(price);
+        return price;
     }
 
     public void setPrice(String price) {
         this.price = price;
     }
-
 
     public String getProductkey(){
         return productkey;
@@ -65,5 +43,4 @@ public class BestDealsDomain {
     public void setProductkey(String productkey) {
         this.productkey = productkey;
     }
-
 }

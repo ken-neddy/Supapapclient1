@@ -1,4 +1,4 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 public class User {
     public String email;

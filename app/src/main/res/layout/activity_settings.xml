@@ -4,43 +4,84 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Settings"
+    tools:context=".activities.Settings"
     android:orientation="vertical">
 
-    <RelativeLayout
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:id="@+id/appbar3"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:padding="16dp">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/backbtn"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:src="@drawable/arrow_back_48px"/>-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:paddingStart="7dp"-->
+<!--            android:paddingEnd="7dp"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:background="@drawable/addproduct3"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="5dp"-->
+<!--                android:layout_centerVertical="true"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:text="locationxy"-->
+<!--                android:textColor="#274F70"-->
+<!--                android:textSize="15dp" />-->
+<!--        </LinearLayout>-->
+
+<!--    </RelativeLayout>-->
+
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:id="@+id/appbar3"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/backbtn"
-            android:layout_centerVertical="true"
-            android:src="@drawable/arrow_back_48px"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <com.google.android.material.appbar.MaterialToolbar
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/topappbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/arrow_back_48px"
+                app:menu="@menu/top_app_bar"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_centerVertical="true"
-            android:paddingStart="7dp"
-            android:paddingEnd="7dp"
-            android:layout_centerHorizontal="true"
-            android:background="@drawable/addproduct3"
-            android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:id="@+id/locationap"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
-                android:text="locationxy"
-                android:textColor="#274F70"
-                android:textSize="15dp" />
-        </LinearLayout>
+                android:text="location"
+                android:textColor="@color/black"
+                app:layout_anchor="@id/topappbar"
+                android:textSize="17sp"/>
 
-    </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

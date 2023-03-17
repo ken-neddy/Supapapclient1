@@ -1,14 +1,15 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
-public class Cart extends AppCompatActivity {
+import com.commerce.supapap.R;
+
+public class editlocation extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cart);
+        setContentView(R.layout.activity_editlocation);
     }
 }

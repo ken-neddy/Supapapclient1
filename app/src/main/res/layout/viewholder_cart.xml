@@ -8,6 +8,7 @@
     android:background="@drawable/cart_background"
     android:elevation="3dp">
 
+
     <ImageView
         android:id="@+id/pic"
         android:layout_width="102dp"
@@ -77,43 +78,56 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <TextView
-        android:id="@+id/deliveryeligibility"
+        android:id="@+id/itemsincarttxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Free delivery available"
-        android:textColor="#43A547"
+        android:text="Items selected"
+        android:textColor="#050505"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@id/itemsincart"
+        app:layout_constraintHorizontal_bias="0.408"
+        app:layout_constraintStart_toEndOf="@+id/pic"
+        app:layout_constraintTop_toBottomOf="@+id/fee" />
+
+    <TextView
+        android:id="@+id/itemsincart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="00"
+        android:textColor="#000000"
         android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toEndOf="@+id/pic"
         app:layout_constraintTop_toBottomOf="@+id/fee" />
 
-    <TextView
-        android:id="@+id/Stars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="1,2,3,4,5"
-        android:textColor="#43A547"
-        android:textSize="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.401"
-        app:layout_constraintStart_toEndOf="@+id/pic"
-        app:layout_constraintTop_toBottomOf="@+id/deliveryeligibility" />
+<!--    <TextView-->
+<!--        android:id="@+id/Stars"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:text="1,2,3,4,5"-->
+<!--        android:textColor="#43A547"-->
+<!--        android:textSize="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.401"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/pic"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/itemsincart" />-->
 
     <TextView
-        android:id="@+id/addBtn"
+        android:id="@+id/payforitems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="@drawable/orange_button"
+        android:background="@drawable/cat_background1"
         android:paddingStart="10dp"
         android:paddingTop="3dp"
         android:paddingEnd="10dp"
         android:paddingBottom="3dp"
-        android:text="+add"
-        android:textColor="#FFFFFF"
+        android:text="0.00"
+        android:textColor="#DA2D2D"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

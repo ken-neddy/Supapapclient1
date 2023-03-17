@@ -1,9 +1,8 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -16,16 +15,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.commerce.supapap.R;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.Objects;
-import java.util.UUID;
 
 public class Addproduct extends AppCompatActivity {
 
@@ -96,7 +94,10 @@ public class Addproduct extends AppCompatActivity {
                 savecategorymethod();
                 saveproducttypemethod();
                 savenumbermethod();
+                savekey();
                 Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(Addproduct.this, Productpic.class);
+                startActivity(intent);
             }
         });
 
@@ -122,10 +123,23 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("name").setValue(productName);
+            databaseReference.child("products").child(key1).child("name").setValue(productName);
            // Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }
+
+    private void savekey() {
+
+        Intent j = getIntent();
+        String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
+            //   storageReference = FirebaseStorage.getInstance().getReference();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+            String upload = databaseReference.push().getKey();
+            databaseReference.child("products").child(key1).child("productkey").setValue(key1);
+            // Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
+
+    }
+
     private void saveproducttypemethod() {
         EditText editText = findViewById(R.id.productType);
         String productName = editText.getText().toString().trim();
@@ -138,7 +152,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("type").setValue(productName);
+            databaseReference.child("products").child(key1).child("type").setValue(productName);
            // Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }
@@ -153,7 +167,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("category").setValue(productName);
+            databaseReference.child("products").child(key1).child("category").setValue(productName);
           //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }
@@ -169,7 +183,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("price").setValue(productName);
+            databaseReference.child("products").child(key1).child("price").setValue(productName);
           //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }
@@ -183,7 +197,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("stock").setValue(productName);
+            databaseReference.child("products").child(key1).child("stock").setValue(productName);
             //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
 
@@ -199,7 +213,7 @@ public class Addproduct extends AppCompatActivity {
             //   storageReference = FirebaseStorage.getInstance().getReference();
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
             String upload = databaseReference.push().getKey();
-            databaseReference.child("products").child(userId).child(key1).child("description").setValue(productName);
+            databaseReference.child("products").child(key1).child("description").setValue(productName);
           //  Toast.makeText(Addproduct.this, "Saved", Toast.LENGTH_LONG).show();
         }
     }

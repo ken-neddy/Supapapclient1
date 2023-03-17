@@ -1,4 +1,4 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,6 @@ import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Log;
@@ -20,15 +19,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.commerce.supapap.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -38,12 +35,9 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Objects;
-import java.util.UUID;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
@@ -177,12 +171,14 @@ public class Productpic extends AppCompatActivity {
                                     public void onSuccess(Uri uri) {
                                         databaseReference = FirebaseDatabase.getInstance().getReference();
                                        String key1 = databaseReference.push().getKey();
-                                               databaseReference.child("products").child(userId).child(key1).child("image").setValue(String.valueOf(uri))
+                                        databaseReference.child("products").child(key1).child("vendorid").setValue(userId);
+                                               databaseReference.child("products").child(key1).child("image").setValue(String.valueOf(uri))
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void unused) {
                                                     }
                                                 });
+
 
 //                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
 //                                            @Override
@@ -201,7 +197,7 @@ public class Productpic extends AppCompatActivity {
                                        // Toast.makeText(Productpic.this, "... " + UUID.randomUUID().toString() , Toast.LENGTH_LONG).show();
                                        // Toast.makeText(Productpic.this, "... " + key1 , Toast.LENGTH_LONG).show();
                                       //  String keyg = key1.getBytes().toString();
-                                        Intent i = new Intent(Productpic.this,Addproduct.class);
+                                        Intent i = new Intent(Productpic.this, Addproduct.class);
                                         i.putExtra("EXTRA_NAME",key1);
                                         startActivity(i);
                                     }

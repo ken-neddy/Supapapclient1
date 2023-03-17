@@ -1,8 +1,10 @@
-package com.commerce.supapap;
+package com.commerce.supapap.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.commerce.supapap.R;
 
 public class Activity_intro extends AppCompatActivity {
 
