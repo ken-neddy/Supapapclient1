@@ -61,7 +61,7 @@ public class Addproduct extends AppCompatActivity {
         Intent j = getIntent();
         String key1 = j.getStringExtra(Productpic.EXTRA_NAME);
         tv8.setText(key1);
-        Log.d("ufunguo", "This is the key... " + key1);
+        Log.d("funguo", "This is the key... " + key1);
 
         addinadd.setOnClickListener(new View.OnClickListener() {
             @Override

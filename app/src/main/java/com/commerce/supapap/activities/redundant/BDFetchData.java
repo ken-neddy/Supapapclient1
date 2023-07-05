@@ -1,3 +1,4 @@
+/*
 package com.commerce.supapap.Dbtest;
 
 public class BDFetchData {
@@ -44,3 +45,4 @@ public class BDFetchData {
         this.productkey = productkey;
     }
 }
+*/

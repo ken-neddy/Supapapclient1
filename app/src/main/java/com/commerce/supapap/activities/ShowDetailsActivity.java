@@ -221,7 +221,8 @@ public class ShowDetailsActivity extends AppCompatActivity {
         if(currentUser!=null){
             currentUserId=currentUser.getUid();
         }
-        databaseReference.child("carts").child(currentUserId).child(productkey).child("productkey").setValue(productkey);
+       databaseReference.child("carts").child(currentUserId).child(productkey).child("productkey").setValue(productkey);
+
     }
     
     }

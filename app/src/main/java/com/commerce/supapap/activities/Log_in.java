@@ -50,6 +50,7 @@ public class Log_in extends AppCompatActivity {
     ProgressBar progressBar;
     int count = 0;
     Timer timer;
+    String userid;
 
 
 
@@ -73,6 +74,10 @@ public class Log_in extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         progressBar.setVisibility(View.VISIBLE);
         timer = new Timer();
+        userid = mAuth.getCurrentUser().getUid();
+
+
+
 
         createaccount.setOnClickListener(new View.OnClickListener() {
             @Override

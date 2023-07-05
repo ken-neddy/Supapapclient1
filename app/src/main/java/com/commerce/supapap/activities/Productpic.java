@@ -178,7 +178,7 @@ public class Productpic extends AppCompatActivity {
                                                     public void onSuccess(Void unused) {
                                                     }
                                                 });
-
+                                       // Log.d("userid","userid is : "+ userId);
 
 //                                        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
 //                                            @Override

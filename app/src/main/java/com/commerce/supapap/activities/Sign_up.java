@@ -206,6 +206,7 @@ public class Sign_up extends AppCompatActivity {
                     if (task.isSuccessful()){
                         User user = new User(email);
                         userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+                        Log.d("id","d is : "+ userId);
                         FirebaseDatabase.getInstance().getReference().child(userId);
                         FirebaseDatabase.getInstance().getReference("Users")
                                 .setValue(user)

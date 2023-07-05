@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.commerce.supapap.R;
-import com.commerce.supapap.Dbtest.BDAdapter;
+import com.commerce.supapap.adaptors.BestDealsAdapter;
 import com.commerce.supapap.adaptors.CategoryAdaptor;
 import com.commerce.supapap.domains.BestDealsDomain;
 import com.commerce.supapap.domains.CategoryDomain;
@@ -50,7 +50,7 @@ public class Dashboard extends AppCompatActivity {
     private TextView locationtxt;
     private FloatingActionButton cart;
     DatabaseReference databaseReference;
-    BDAdapter bdAdapter;
+    BestDealsAdapter bdAdapter;
     ArrayList<BestDealsDomain>list;
 
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -66,7 +66,7 @@ public class Dashboard extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("products");
         list = new ArrayList<>();
         recyclerViewBestDeals.setLayoutManager(new LinearLayoutManager(this));
-        bdAdapter = new BDAdapter(this,list);
+        bdAdapter = new BestDealsAdapter(this,list);
         recyclerViewBestDeals.setAdapter(bdAdapter);
         locationtxt=findViewById(R.id.locationtxt);
         cart = findViewById(R.id.cart);
@@ -173,7 +173,7 @@ public class Dashboard extends AppCompatActivity {
         imageSlider.setImageList(slideModelList);
 
      //   List<BDFetchData> bdFetchData;
-        BDAdapter bdHelperAdapter;
+        //BestDealsAdapter bdHelperAdapter;
 
       /*mtoolbar = findViewById(R.id.toolbar1);
        setSupportActionBar(mtoolbar);*/

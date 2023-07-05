@@ -1,6 +1,4 @@
-package com.commerce.supapap.Dbtest;
-
-import static androidx.constraintlayout.helper.widget.MotionEffect.TAG;
+package com.commerce.supapap.adaptors;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,16 +21,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class BDAdapter extends RecyclerView.Adapter<BDAdapter.MyViewHolder>{
+public class BestDealsAdapter extends RecyclerView.Adapter<BestDealsAdapter.MyViewHolder>{
     Context context;
     ArrayList<BestDealsDomain>list;
     DatabaseReference databaseReference;
 
-    public BDAdapter(Context context, ArrayList<BestDealsDomain> list) {
+    public BestDealsAdapter(Context context, ArrayList<BestDealsDomain> list) {
         this.context = context;
         this.list = list;
     }
