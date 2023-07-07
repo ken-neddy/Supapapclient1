@@ -53,7 +53,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.MyViewHolder> 
 
     @Override
     public int getItemCount() {
-        ArrayList<CartDomain>cartlist=new ArrayList<>();
        // Log.d("count","count is : "+ cartlist.size());
         return cartlist.size();
 

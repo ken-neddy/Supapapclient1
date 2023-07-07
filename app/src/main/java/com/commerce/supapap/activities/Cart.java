@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.commerce.supapap.R;
@@ -45,16 +46,14 @@ public class Cart extends AppCompatActivity {
 
         recyclerViewCart.setLayoutManager(new LinearLayoutManager(this));
         mAuth = FirebaseAuth.getInstance();
-        cartAdapter = new CartAdapter(this,cartlist);
-        recyclerViewCart.setAdapter(cartAdapter);
         cartlist = new ArrayList<>();
 
         FirebaseUser mFirebaseUser = mAuth.getCurrentUser();
         if(mFirebaseUser != null) {
             userid = mFirebaseUser.getUid();
         }
-        databaseReference = FirebaseDatabase.getInstance()
-                .getReference("carts").child("AvCtRsOlblVpm6AlVdtlSk0RXsm1").child("-NLzL8dAfBj-RDavgW9I");
+//        databaseReference = FirebaseDatabase.getInstance().getReference("carts").child("AvCtRsOlblVpm6AlVdtlSk0RXsm1").child("-NLzL8dAfBj-RDavgW9I");
+        databaseReference = FirebaseDatabase.getInstance().getReference("carts").child("AvCtRsOlblVpm6AlVdtlSk0RXsm1");
 
 
         Toast.makeText(Cart.this, userid, Toast.LENGTH_LONG).show();
@@ -94,8 +93,12 @@ public class Cart extends AppCompatActivity {
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Log.e("DATA",snapshot.toString());
                 CartDomain cartDomain = snapshot.getValue(CartDomain.class);
                 cartlist.add(cartDomain);
+                Log.e("DATA C",String.valueOf(cartlist.size()));
+                cartAdapter = new CartAdapter(Cart.this,cartlist);
+                recyclerViewCart.setAdapter(cartAdapter);
             }
 
             @Override
